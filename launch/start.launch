@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="config_path" default="$(find vins)/../config/gazebo/camera_config.yaml" />
+    <arg name="vins_path" default="$(find vins_estimator)/../" />
+    
+    <node name="vins_estimator" pkg="vins_estimator" type="vins_estimator" output="screen">
+        <param name="config_file" type="string" value="$(arg config_path)" />
+        <param name="vins_folder" type="string" value="$(arg vins_path)" />
+        <remap from="/vins_estimator/odometry" to="/vins_estimator/raw_odometry" />
+    </node>
+
+
+    <node name="vins_tf_broadcaster" pkg="tf" type="static_transform_publisher" 
+          args="0 0 0 0 0 0 world vins_world 100" />
+    
+    <node name="odom_transform" pkg="your_package" type="odom_transform.py" output="screen" />
+</launch>
