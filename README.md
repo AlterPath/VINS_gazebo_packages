@@ -75,3 +75,7 @@ ROS Noetic, Python (rospy), Gazebo, PX4 SITL, MAVROS, Clover (COEX), VINS-Fusion
 ## Лицензия
 
 [MIT](LICENSE)
+
+---
+
+<sub>Код написан с декабря 2025 по январь 2026, на GitHub выложен в ноябре 2026. Даты коммитов взяты по датам исходных файлов, README и иллюстрации добавлены при выгрузке.</sub>
